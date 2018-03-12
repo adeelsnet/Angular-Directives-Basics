@@ -1,0 +1,21 @@
+.fontColor {
+  color: white;
+}
+
+#lb1 {
+  font-weight: bold;
+ }
+
+#lb2 {
+  padding: 10px;
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+}
+
+p {
+  margin: 1px;
+  padding: 1px;
+  padding-left: 30px;
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+}

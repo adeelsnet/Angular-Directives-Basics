@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Here is the Solution: </h2>
+      <label id="lb1"> Enter Detail here: </label>
+
+      <input type="text" class="form-control" [(ngModel)]='detail'
+      [disabled]='click' (input)="enableDetailBtn($event)">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <br>
+
+      <strong>
+        <p *ngIf="inputLock"> {{ detail }} </p>
+      </strong>
+
+    </div>
+    <div class="col-md-8">
+      <br>
+
+      <button class="btn btn-primary" (click)="onOff()" [disabled]='detailBtn'>
+        Display Details </button>
+
+      <button class="btn btn-primary" (click)="inputLock = false; click = false; detailBtn = true;
+       counter = 0; arrayCount = []; detail = ''">
+        Reset </button>
+
+      <!-- {backgroundColor: getColor(arrayCount.length)} -->
+      <label id="lb2" *ngIf="click"
+      [ngStyle]="{backgroundColor: arrayCount.length >=5 ? 'blue' : 'transparent'}"
+      [ngClass]="{fontColor: arrayCount.length >= 5}">
+        Click Number: {{ arrayCount.length }} </label>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="click">
+    <!-- backgroundColor: getColor(i+1) -->
+    <p *ngFor="let clickNum of arrayCount; let i = index"
+    [ngStyle]="{backgroundColor: i >=4 ? 'blue' : 'transparent'}"
+    [ngClass]="{fontColor: i >= 4}">
+      {{ i+1 }}. {{ clickNum }}
+    </p>
+  </div>
+</div>
